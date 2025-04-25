@@ -22,7 +22,7 @@ class LoginView extends StatelessWidget {
                 hintText: "Enter your username",
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.deepOrange, width: 3),
+                  borderSide: BorderSide(color: Colors.orange, width: 3),
                 ),
               ),
             ),
