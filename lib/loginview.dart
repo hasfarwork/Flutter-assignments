@@ -18,7 +18,7 @@ class LoginView extends StatelessWidget {
             //  Image.asset('assets/images/car rear.jpg'),
             TextField(
               decoration: InputDecoration(
-                labelText: "User name",
+                labelText: "User name please",
                 hintText: "Enter your username first",
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
