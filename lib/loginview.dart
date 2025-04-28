@@ -19,10 +19,10 @@ class LoginView extends StatelessWidget {
             TextField(
               decoration: InputDecoration(
                 labelText: "User name",
-                hintText: "Enter your username",
+                hintText: "Enter your username first",
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.orange, width: 3),
+                  borderSide: BorderSide(color: Colors.brown, width: 3),
                 ),
               ),
             ),
