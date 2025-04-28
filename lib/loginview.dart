@@ -31,7 +31,7 @@ class LoginView extends StatelessWidget {
                 labelText: "Password",
                 hintText: "Enter your password",
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(20),
                   borderSide: BorderSide(color: Colors.deepOrange, width: 3),
                 ),
               ),
