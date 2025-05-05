@@ -8,20 +8,37 @@ class CounterWidget extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<CounterWidget> {
-  int count = 0;
+  bool isfavorite = false;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text("$count"),
-        ElevatedButton(
-          onPressed: () {
-            count++;
-            setState(() {});
-          },
-          child: Text("Add"),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(
+              onPressed: () {
+                isfavorite = !isfavorite;
+                setState(() {});
+                ;
+              },
+              icon: Icon(Icons.favorite),
+              color: isfavorite ? Colors.red : Colors.grey,
+              iconSize: 50,
+            ),
+            //Icon(Icons.favorite, weight: 50, color: Colors.grey, size: 60),
+            //Text("$count"),
+
+            // ElevatedButton(
+            //   onPressed: () {
+            //     count++;
+            //     setState(() {});
+            //   },
+            //   child: Text("Add"),
+            // ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
