@@ -16,11 +16,11 @@ class _WhatsappState extends State<Whatsapp> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        leading: TextField(controller: editcontrol),
-        title:
-            names.isEmpty
-                ? Text("Student not registered")
-                : Text("Student names", style: TextStyle(color: Colors.white)),
+
+        title: TextField(
+          controller: editcontrol,
+          style: TextStyle(fontSize: 30),
+        ),
       ),
       body:
       // names.isEmpty
@@ -47,9 +47,8 @@ class _WhatsappState extends State<Whatsapp> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           names.add(editcontrol.text);
-  editcontrol.clear();
+          editcontrol.clear();
           setState(() {});
-        
         },
 
         child: Text("Add"),
