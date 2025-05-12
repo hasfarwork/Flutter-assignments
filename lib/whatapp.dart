@@ -8,6 +8,7 @@ class Whatsapp extends StatefulWidget {
 }
 
 class _WhatsappState extends State<Whatsapp> {
+  TextEditingController editcontrol = TextEditingController();
   List names = ["Huzaifa", "Salman", "Shehbaz"];
 
   @override
@@ -15,6 +16,7 @@ class _WhatsappState extends State<Whatsapp> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
+        leading: TextField(controller: editcontrol),
         title:
             names.isEmpty
                 ? Text("Student not registered")
@@ -27,17 +29,27 @@ class _WhatsappState extends State<Whatsapp> {
         itemCount: names.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            color: Colors.blue,
-            height: 200,
-            margin: EdgeInsets.only(bottom: 20),
-            child: Text("${names[index]}", style: TextStyle(fontSize: 30)),
+            padding: EdgeInsets.only(bottom: 10),
+            child: ListTile(
+              tileColor: Colors.blue,
+              title: Text("${names[index]}", style: TextStyle(fontSize: 30)),
+              trailing: IconButton(
+                onPressed: () {
+                  names.removeAt(index);
+                  setState(() {});
+                },
+                icon: Icon(Icons.delete),
+              ),
+            ),
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          names.add("Student name");
+          names.add(editcontrol.text);
+  editcontrol.clear();
           setState(() {});
+        
         },
 
         child: Text("Add"),
