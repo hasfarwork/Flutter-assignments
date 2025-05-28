@@ -3,49 +3,38 @@ import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
-  List<Map> details = [
-    {"name": "asif", "age": 27, "city": "lahore"},
-    {"name": "saif", "age": 30, "city": "Karachi"},
-    {"name": "Huzaifa", "age": 30, "city": "Islamabad"},
+  List posts = [
+    {
+      "userId": 1,
+      "id": 1,
+      "title":
+          "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+      "body":
+          "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "qui est esse",
+      "body":
+          "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+    },
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
-
-        title: Text("Home Screen", style: TextStyle(fontSize: 30)),
+        title: Text("Home Page"),
+        backgroundColor: Colors.blueAccent,
       ),
-      body: Column(
-        children: [
-          Container(color: Colors.yellow, height: 300),
-          Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              // physics: NeverScrollableScrollPhysics(),
-              itemCount: 60,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: ListTile(
-                    title: Text("details[index]['name']"),
-                    tileColor: Colors.blueGrey,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder:
-                              (context) =>
-                                  AboutScreen(studentData: details[index]),
-                        ),
-                      );
-                    },
-                  ),
-                );
-              },
-            ),
-          ),
-        ],
+      body: ListView.builder(
+        itemCount: posts.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text("${posts[index]['title']}"),
+            subtitle: Text("${posts[index]['body']}"),
+          );
+        },
       ),
     );
   }
